@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import Dashboard from "./Dashboard";
 
 export default function App() {
@@ -6,7 +6,7 @@ export default function App() {
   const [senha, setSenha] = useState("");
   const [autenticado, setAutenticado] = useState(false);
 
-  function entrar(e: React.FormEvent<HTMLFormElement>) {
+  function entrar(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (usuario.trim() && senha.trim()) {
