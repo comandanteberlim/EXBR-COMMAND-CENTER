@@ -1,0 +1,35 @@
+
+import { useState } from "react";
+
+export default function App() {
+  const [usuario, setUsuario] = useState("");
+  const [senha, setSenha] = useState("");
+
+  return (
+    <main className="container">
+      <section className="login">
+        <h1>🇧🇷 EXBR</h1>
+        <h2>COMMAND CENTER</h2>
+        <p>Central de comando da EXBR</p>
+
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            placeholder="Nome de usuário"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
+          <button type="submit">ENTRAR</button>
+        </form>
+
+        <small>SISTEMA DE GERENCIAMENTO EXBR</small>
+      </section>
+    </main>
+  );
+}
