@@ -1,0 +1,224 @@
+
+/* =================================
+   EXBR COMMAND CENTER
+   IDENTIDADE VISUAL
+================================= */
+
+:root {
+  --bg-main: #10140f;
+  --bg-card: #191f17;
+  --bg-input: #252d22;
+  --primary: #526344;
+  --secondary: #a7ba8d;
+  --accent: #c9ad60;
+  --text-main: #f1f1e8;
+  --text-muted: #b7b9af;
+  --border: #536449;
+}
+
+/* =================================
+   TEMAS PERSONALIZÁVEIS
+================================= */
+
+[data-theme="military"] {
+  --bg-main: #10140f;
+  --bg-card: #191f17;
+  --primary: #526344;
+  --accent: #c9ad60;
+}
+
+[data-theme="christmas"] {
+  --bg-main: #10150f;
+  --bg-card: #19251b;
+  --primary: #267344;
+  --accent: #c83d3d;
+}
+
+[data-theme="halloween"] {
+  --bg-main: #130e16;
+  --bg-card: #211729;
+  --primary: #8b4513;
+  --accent: #f28c28;
+}
+
+[data-theme="easter"] {
+  --bg-main: #171326;
+  --bg-card: #28213b;
+  --primary: #9876bd;
+  --accent: #e7b8d1;
+}
+
+[data-theme="newyear"] {
+  --bg-main: #101018;
+  --bg-card: #1c1c2c;
+  --primary: #34345d;
+  --accent: #d8bd70;
+}
+
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* =================================
+   TELA PRINCIPAL
+================================= */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(
+      circle at top,
+      var(--primary),
+      transparent 55%
+    ),
+    var(--bg-main);
+}
+
+/* =================================
+   CARTÃO DE LOGIN
+================================= */
+
+.login {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 10px 40px #0008;
+}
+
+.login h1 {
+  color: var(--accent);
+  font-size: 38px;
+  letter-spacing: 5px;
+}
+
+.login h2 {
+  margin-top: 12px;
+  color: var(--secondary);
+  font-size: 21px;
+  letter-spacing: 3px;
+}
+
+.login p {
+  margin: 18px 0 28px;
+  color: var(--text-muted);
+}
+
+/* =================================
+   CAMPOS DE LOGIN
+================================= */
+
+.login input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: var(--text-main);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  outline: none;
+}
+
+.login input:focus {
+  border-color: var(--accent);
+}
+
+/* =================================
+   BOTÕES
+================================= */
+
+.login button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+  color: var(--bg-main);
+  background: var(--accent);
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login button:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+/* =================================
+   RODAPÉ
+================================= */
+
+.login small {
+  display: block;
+  margin-top: 28px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+/* =================================
+   ACESSIBILIDADE
+================================= */
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =================================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 480px) {
+  .login {
+    padding: 32px 22px;
+  }
+
+  .login h1 {
+    font-size: 32px;
+  }
+
+  .login h2 {
+    font-size: 18px;
+  }
+}
